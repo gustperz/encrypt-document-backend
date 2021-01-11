@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { logReqs } from '../services/logger';
 
 export function validate(req: Request, res: Response) {
   const { body: reqBody, method, url } = req;
@@ -10,6 +9,4 @@ export function validate(req: Request, res: Response) {
   const resBody = { message, success };
 
   res.json(resBody);
-
-  logReqs({ method, url, reqBody, resBody });
 }

@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import requestLogger from './services/requestLogger';
 
 export default class App {
   public app: express.Application;
@@ -13,6 +14,7 @@ export default class App {
 
   private initializeMiddlewares() {
     this.app.use(bodyParser.json());
+    requestLogger(this.app)
   }
 
   private initializeRoutes(router: express.Router) {
