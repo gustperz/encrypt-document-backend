@@ -1,10 +1,7 @@
-import express from "express";
+import App from './app';
+import router from './router';
+import { constants } from './utils/config';
 
-const app = express();
-const PORT = 8000;
+const app = new App(router);
 
-app.get("/", (req, res) => res.send("hello there"));
-
-app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
-});
+app.start(constants.PORT);
