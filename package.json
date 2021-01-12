@@ -1,12 +1,13 @@
 {
-  "name": "docuent-server",
+  "name": "document-server",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "author": "gustperz@gamil.com",
   "license": "ISC",
   "scripts": {
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "build": "tsc --build"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
